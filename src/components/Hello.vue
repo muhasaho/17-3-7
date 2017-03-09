@@ -25,7 +25,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'The future of statistics starts here...'
+      msg: 'Try again'
     }
   }
 }
