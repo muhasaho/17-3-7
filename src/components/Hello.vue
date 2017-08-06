@@ -1,5 +1,5 @@
 <template>
-  <div class="container">2 + 2 = {{result}}</div>
+  <div class="container">2 + 1 = {{result}}</div>
 </template>
 
 <script>
@@ -7,7 +7,7 @@ export default {
   data () {
     return {
       msg: 'Try again',
-      result: 2 + 2
+      result: 2 + 1
     }
   }
 }
