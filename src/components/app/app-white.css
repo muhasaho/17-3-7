@@ -1,0 +1,9 @@
+.App {
+    background: #222222;
+    height: 100%;
+    color: white;
+    /*TODO: remove temp styles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
