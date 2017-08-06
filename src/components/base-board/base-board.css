@@ -1,0 +1,15 @@
+.base-board {
+    width: 608px;
+    height: 200px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.base-board__header-area {
+    height: 32px;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+}
