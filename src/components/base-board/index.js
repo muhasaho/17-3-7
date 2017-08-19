@@ -1,5 +1,6 @@
 import React from 'react'
 import './base-board.css'
+import { FormattedMessage } from 'react-intl';
 
 /**
  * Base board that all other boards inherit from
@@ -17,6 +18,7 @@ const BaseBoard = ({title, children}) => (
       <div>{title}</div>
       <div>options</div>
     </div>
+    <FormattedMessage id="helloWorld"/>
     {children}
   </div>
 );
