@@ -1,7 +1,19 @@
-.App {
+.app--container{
     height: 100%;
-    /*TODO: remove temp styles */
+}
+
+.app--options-area{
+    height: 160px;
+    border: 1px solid black;
+    margin: 32px;
+}
+
+.app--display-area{
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+}
+
+.app--display-area > *{
+    margin: 8px;
 }

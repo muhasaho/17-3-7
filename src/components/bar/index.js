@@ -1,6 +1,8 @@
 import React from 'react'
 import "./bar.css"
+import PropTypes from 'prop-types'
 
+// http://paletton.com/#uid=13K0u0kwi++bu++hX++++rd++kX
 const monochromeBlue = [
   "#ADC7FF",
   "#7FA8FF",
@@ -26,5 +28,9 @@ const Bar = ({values}) => {
     </div>
   )
 };
+
+Bar.propTypes = {
+  values: PropTypes.array.isRequired,
+}
 
 export default Bar;
