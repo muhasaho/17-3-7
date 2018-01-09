@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import {FormattedMessage} from 'react-intl'
-import BaseBoard from '../base-board'
-import './app-white.css'
+import Bar from '../bar'
+import './app.css'
+
+const VALUES = [1,1,1,1,1,1,2,3,4,5]
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <BaseBoard title={<FormattedMessage id="data"/>}/>
+        <Bar values={VALUES}/>
       </div>
     );
   }
