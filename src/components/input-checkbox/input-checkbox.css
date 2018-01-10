@@ -1,0 +1,8 @@
+.input-checkbox--container{
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.input-checkbox--input{
+    margin-right: 4px;
+}
