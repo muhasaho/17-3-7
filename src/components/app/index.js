@@ -6,8 +6,21 @@ import Options from '../options'
 class App extends Component {
   state = {
     options: {
-      monochrome: true,
-    }
+      monochrome: false,
+    },
+    data: [
+      {
+        label: "Fake",
+        bars: [
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2],
+          [2,2,2,2,2,2,2,2,2,2,3,3,3,3,5,5,5,5],
+          [1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2],
+          [1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,3,3],
+          [4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5],
+          [1,1,1,1,1,1,1,1,1,1,1,2,2,3,3,3,3,3],
+        ]
+      }
+    ]
   }
 
   _onOptionChange = (key, value) => {
@@ -27,27 +40,21 @@ class App extends Component {
           <Options options={this.state.options} onOptionChange={this._onOptionChange}/>
         </div>
         <div className="app--display-area">
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
-          <BarGroup options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
         </div>
       </div>
     );

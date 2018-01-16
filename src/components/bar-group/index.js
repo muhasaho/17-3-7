@@ -3,23 +3,20 @@ import './bar-group.css'
 import Bar from '../bar'
 import PropTypes from 'prop-types'
 
-const VALUES = [1,1,1,1,1,1,2,3,4,5]
-
-const BarGroup = ({options}) => {
+const BarGroup = ({options, label, bars}) => {
   return (
     <div className="bar-group--container">
-      <Bar values={VALUES} options={options}/>
-      <Bar values={VALUES} options={options}/>
-      <Bar values={VALUES} options={options}/>
-      <Bar values={VALUES} options={options}/>
-      <Bar values={VALUES} options={options}/>
-      <Bar values={VALUES} options={options}/>
+      {
+        bars.map(b => <Bar values={b} options={options}/>)
+      }
     </div>
   )
 }
 
 BarGroup.propTypes = {
   options: PropTypes.object,
+  label: PropTypes.string,
+  bars: PropTypes.array.isRequired,
 }
 
 export default BarGroup;

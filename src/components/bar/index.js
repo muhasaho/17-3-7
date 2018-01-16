@@ -4,22 +4,21 @@ import PropTypes from 'prop-types'
 
 // http://paletton.com/#uid=13K0u0kwi++bu++hX++++rd++kX
 const monochromeBlue = [
-  "#ADC7FF",
-  "#7FA8FF",
-  "#1A63FF",
+  "#00246F",
   "#002E91",
-  "#00246F"
+  "#1A63FF",
+  "#7FA8FF",
+  "#ADC7FF"
 ]
-
 // http://paletton.com/#uid=1000u0kwi++bu++hX++++rd++kX // reds
 // http://paletton.com/#uid=11T0u0kwi++bu++hX++++rd++kX // yellow
 // http://paletton.com/#uid=12P0u0kwi++bu++hX++++rd++kX // green
 const greenYellowRed = [
-  "#A70000",
-  "#FF7070",
-  "#FFFF00",
+  "#008500",
   "#70FF70",
-  "#008500"
+  "#FFFF00",
+  "#FF7070",
+  "#A70000"
 ]
 
 const Bar = ({values, options}) => {
