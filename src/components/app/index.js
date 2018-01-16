@@ -7,6 +7,7 @@ class App extends Component {
   state = {
     options: {
       monochrome: false,
+      barWidth: 50,
     },
     data: [
       {

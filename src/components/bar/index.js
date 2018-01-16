@@ -31,7 +31,7 @@ const Bar = ({values, options}) => {
     }
   })
   return (
-    <div className="bar--container">
+    <div className="bar--container" style={{width: options.barWidth}}>
       {
         barInfo.map((bi, i) => <div style={{...bi}} key={i}/>)
       }
