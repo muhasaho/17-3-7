@@ -7,7 +7,7 @@ const BarGroup = ({options, label, bars}) => {
   return (
     <div className="bar-group--container">
       {
-        bars.map(b => <Bar values={b} options={options}/>)
+        bars.map((b,i) => <Bar values={b} options={options} key={i}/>)
       }
     </div>
   )
