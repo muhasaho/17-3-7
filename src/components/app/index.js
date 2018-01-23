@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './app.css'
 import BarGroup from '../bar-group'
 import Options from '../options'
+import Papa from 'papaparse'
 
 class App extends Component {
   state = {
@@ -34,11 +35,19 @@ class App extends Component {
     })
   }
 
+  _onFileChange = (file) => {
+    console.log("File: ", file)
+    Papa.parse(file, {
+      dynamicTyping: true,
+      complete: (results) => console.log("Results: ", results)
+    })
+  }
+
   render() {
     return (
       <div className="app--container">
         <div className="app--options-area">
-          <Options options={this.state.options} onOptionChange={this._onOptionChange}/>
+          <Options options={this.state.options} onOptionChange={this._onOptionChange} onFileChange={this._onFileChange}/>
         </div>
         <div className="app--display-area">
           <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
