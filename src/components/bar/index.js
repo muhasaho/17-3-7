@@ -4,21 +4,23 @@ import PropTypes from 'prop-types'
 
 // http://paletton.com/#uid=13K0u0kwi++bu++hX++++rd++kX
 const monochromeBlue = [
-  "#00246F",
-  "#002E91",
-  "#1A63FF",
+  "black",
+  "#ADC7FF",
   "#7FA8FF",
-  "#ADC7FF"
+  "#1A63FF",
+  "#002E91",
+  "#00246F",
 ]
 // http://paletton.com/#uid=1000u0kwi++bu++hX++++rd++kX // reds
 // http://paletton.com/#uid=11T0u0kwi++bu++hX++++rd++kX // yellow
 // http://paletton.com/#uid=12P0u0kwi++bu++hX++++rd++kX // green
 const greenYellowRed = [
-  "#008500",
-  "#70FF70",
-  "#FFFF00",
+  "black",
+  "#A70000",
   "#FF7070",
-  "#A70000"
+  "#FFFF00",
+  "#70FF70",
+  "#008500",
 ]
 
 const Bar = ({values, options}) => {
@@ -26,7 +28,7 @@ const Bar = ({values, options}) => {
   const cellHeightPercent = (1/values.length) * 100;
   const barInfo = values.map(val => {
     return {
-      background: colors[val - 1],
+      background: colors[val],
       height: `${cellHeightPercent}%`,
     }
   })

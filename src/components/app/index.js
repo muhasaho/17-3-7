@@ -39,7 +39,35 @@ class App extends Component {
     console.log("File: ", file)
     Papa.parse(file, {
       dynamicTyping: true,
-      complete: (results) => console.log("Results: ", results)
+      complete: (results) => {
+        const data = [];
+        const rows = results.data;
+        const headerRow = rows[0]
+        let lastLabel = undefined;
+        for (let i=1; i<rows.length; i++){
+          const currentRow = rows[i]
+          if (currentRow[0] !== lastLabel){
+            lastLabel = currentRow[0];
+            const dataGroup = {
+              label: lastLabel,
+              bars: []
+            }
+            for (let k=1; k<headerRow.length; k++){
+              dataGroup.bars.push([]);
+            }
+            data.push(dataGroup);
+          }
+          let currentDataGroup = data[data.length - 1]
+          for (let j=1; j<headerRow.length; j++){
+            const dataPoint = currentRow[j] ? currentRow[j] : 0;
+            currentDataGroup.bars[j-1].push(dataPoint);
+          }
+        }
+        console.log("Data", data);
+        this.setState({
+          data
+        })
+      }
     })
   }
 
@@ -50,21 +78,9 @@ class App extends Component {
           <Options options={this.state.options} onOptionChange={this._onOptionChange} onFileChange={this._onFileChange}/>
         </div>
         <div className="app--display-area">
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
-          <BarGroup bars={this.state.data[0].bars} options={this.state.options}/>
+          {
+            this.state.data.map((d, i) => <BarGroup bars={d.bars} options={this.state.options} key={i}/>)
+          }
         </div>
       </div>
     );
