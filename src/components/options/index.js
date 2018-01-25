@@ -9,6 +9,7 @@ const Options = ({options, onOptionChange, onFileChange}) => {
   return (
     <div className="options--container">
       <InputCheckbox onChange={(value)=>onOptionChange("monochrome", value)} value={options.monochrome} label="Monochrome"/>
+      <InputCheckbox onChange={(value)=>onOptionChange("sort", value)} value={options.sort} label="Sort"/>
       <InputText onChange={(val)=>onOptionChange("barWidth", val)} value={options.barWidth} label="Bar Width: " type="number" style={{width: 32}}/>
       <InputFile onChange={onFileChange}/>
     </div>

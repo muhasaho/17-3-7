@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 // http://paletton.com/#uid=13K0u0kwi++bu++hX++++rd++kX
 const monochromeBlue = [
-  "black",
+  "#000000",
   "#ADC7FF",
   "#7FA8FF",
   "#1A63FF",
@@ -15,7 +15,7 @@ const monochromeBlue = [
 // http://paletton.com/#uid=11T0u0kwi++bu++hX++++rd++kX // yellow
 // http://paletton.com/#uid=12P0u0kwi++bu++hX++++rd++kX // green
 const greenYellowRed = [
-  "black",
+  "#000000",
   "#A70000",
   "#FF7070",
   "#FFFF00",
@@ -26,7 +26,8 @@ const greenYellowRed = [
 const Bar = ({values, options}) => {
   const colors = options.monochrome ? monochromeBlue : greenYellowRed;
   const cellHeightPercent = (1/values.length) * 100;
-  const barInfo = values.map(val => {
+  const valuesSorted = options.sort ? values.slice().sort((a,b) => b-a) : values.slice();
+  const barInfo = valuesSorted.map(val => {
     return {
       background: colors[val],
       height: `${cellHeightPercent}%`,
