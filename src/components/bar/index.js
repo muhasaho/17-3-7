@@ -3,7 +3,7 @@ import "./bar.css"
 import PropTypes from 'prop-types'
 
 // http://paletton.com/#uid=13K0u0kwi++bu++hX++++rd++kX
-const monochromeBlue = [
+export const monochromeBlue = [
   "#000000",
   "#ADC7FF",
   "#7FA8FF",
@@ -14,7 +14,7 @@ const monochromeBlue = [
 // http://paletton.com/#uid=1000u0kwi++bu++hX++++rd++kX // reds
 // http://paletton.com/#uid=11T0u0kwi++bu++hX++++rd++kX // yellow
 // http://paletton.com/#uid=12P0u0kwi++bu++hX++++rd++kX // green
-const greenYellowRed = [
+export const greenYellowRed = [
   "#000000",
   "#A70000",
   "#FF7070",

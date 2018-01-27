@@ -4,6 +4,8 @@
 
 .app--options-area{
     margin: 32px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .app--display-area{

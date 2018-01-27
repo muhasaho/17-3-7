@@ -1,0 +1,20 @@
+.color-legend__container{
+
+}
+
+.color-legend__label{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+
+.color-legend__squares{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-legend__square{
+    width: 16px;
+    height: 16px;
+}

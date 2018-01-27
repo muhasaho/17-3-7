@@ -3,6 +3,7 @@ import './app.css'
 import BarGroup from '../bar-group'
 import Options from '../options'
 import Papa from 'papaparse'
+import ColorLegend from '../color-legend'
 
 class App extends Component {
   state = {
@@ -77,6 +78,7 @@ class App extends Component {
       <div className="app--container">
         <div className="app--options-area">
           <Options options={this.state.options} onOptionChange={this._onOptionChange} onFileChange={this._onFileChange}/>
+          <ColorLegend monochrome={this.state.options.monochrome}/>
         </div>
         <div className="app--display-area">
           {
