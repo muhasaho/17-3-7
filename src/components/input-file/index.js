@@ -7,9 +7,9 @@ import PropTypes from 'prop-types'
  * @returns {XML}
  * @constructor
  */
-const InputFile = ({onChange}) => {
+const InputFile = ({onChange, ...props}) => {
   return (
-    <input type="file" onChange={(e)=>onChange(e.target.files[0])}/>
+    <input type="file" onChange={(e)=>onChange(e.target.files[0])} {...props}/>
 
   )
 }

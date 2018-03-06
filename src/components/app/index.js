@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     options: {
       monochrome: false,
-      sort: false,
+      sort: true,
       barWidth: 50,
     },
     data: [
@@ -39,6 +39,7 @@ class App extends Component {
 
   _onFileChange = (file) => {
     console.log("File: ", file)
+    document.title = file.name;
     Papa.parse(file, {
       dynamicTyping: true,
       complete: (results) => {
