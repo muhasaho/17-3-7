@@ -42,6 +42,7 @@ class App extends Component {
     document.title = file.name;
     Papa.parse(file, {
       dynamicTyping: true,
+      skipEmptyLines: true,
       complete: (results) => {
         const data = [];
         const rows = results.data;
