@@ -1,0 +1,11 @@
+.ticks--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ticks--tick{
+    height: 1px;
+    width: 4px;
+    background: #AAAAAA;
+}

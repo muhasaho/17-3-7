@@ -9,3 +9,7 @@
     display: flex;
     justify-content: center;
 }
+
+.bar-group--ticks-area{
+    padding-right: 4px;
+}

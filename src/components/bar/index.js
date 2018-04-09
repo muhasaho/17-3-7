@@ -31,7 +31,7 @@ const Bar = ({values, options}) => {
     }
   })
   return (
-    <div className="bar--container" style={{width: options.barWidth}}>
+    <div className="bar--container" style={{width: parseInt(options.barWidth, 10), height: parseInt(options.barHeight, 10)}}>
       {
         barInfo.slice(0).reverse().map((bi, i) => <div style={{...bi}} key={i}/>)
       }
