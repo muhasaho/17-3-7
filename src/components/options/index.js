@@ -9,8 +9,10 @@ const Options = ({options, onOptionChange, onFileChange}) => {
   return (
     <div className="options--container">
       <InputCheckbox onChange={(value)=>onOptionChange("monochrome", value)} value={options.monochrome} label="Monochrome"/>
-      <InputCheckbox onChange={(value)=>onOptionChange("sort", value)} value={options.sort} label="Sort"/>
-      <InputText onChange={(val)=>onOptionChange("barWidth", val)} value={options.barWidth} label="Bar Width: " type="number" style={{width: 32}}/>
+      <InputCheckbox onChange={(value)=>onOptionChange("showLabel", value)} value={options.showLabel} label="Labels"/>
+      <InputCheckbox onChange={(value)=>onOptionChange("showTicks", value)} value={options.showTicks} label="Ticks"/>
+      <InputText onChange={(val)=>onOptionChange("barWidth", val)} value={options.barWidth} label="Bar Width: " type="number" style={{width: 40}}/>
+      <InputText onChange={(val)=>onOptionChange("barHeight", val)} value={options.barHeight} label="Bar Height: " type="number" style={{width: 40}}/>
       <InputFile onChange={onFileChange} className="no-print"/>
     </div>
   )

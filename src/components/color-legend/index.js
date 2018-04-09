@@ -22,7 +22,7 @@ const renderColors = (colors) =>
       <div>VG</div>
     </div>
     <div className="color-legend__squares">
-      {colors.slice(1).map(color => <div key={color} className="color-legend__square" style={{background: color}}/>)}
+      {colors.map(color => <div key={color} className="color-legend__square" style={{background: color}}/>)}
     </div>
   </div>;
 

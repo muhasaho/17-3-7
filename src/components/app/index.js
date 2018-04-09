@@ -5,23 +5,28 @@ import Options from '../options'
 import Papa from 'papaparse'
 import ColorLegend from '../color-legend'
 
+const RATING_LEVELS = 5
+
 class App extends Component {
   state = {
     options: {
       monochrome: false,
       sort: true,
       barWidth: 50,
+      barHeight: 200,
+      showLabel: true,
+      showTicks: false,
     },
     data: [
       {
         label: "Fake",
         bars: [
-          [3,4,4,5,5,5,5,1,5,3,5,5,5,5,4,5,5,5],
-          [3,3,5,4,4,5,5,5,5,5,4,1,5,1,5,5,5,5],
-          [1,2,3,5,4,4,4,5,5,5,5,5,5,1,5,1,5,5],
-          [1,3,4,4,5,5,5,5,5,5,5,5,3,5,5,2,5,5],
-          [4,4,5,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5],
-          [1,5,2,4,4,5,5,5,5,5,5,5,5,5,5,5,4,5],
+          [10,10,10,10,10],
+          [10,10,10,10,10],
+          [10,10,10,10,10],
+          [10,10,10,10,10],
+          [10,10,10,10,10],
+          [10,10,10,10,10],
         ]
       }
     ]
@@ -46,26 +51,20 @@ class App extends Component {
       complete: (results) => {
         const data = [];
         const rows = results.data;
-        const headerRow = rows[0]
+        //const headerRow = rows[0]
         let lastLabel = undefined;
         for (let i=1; i<rows.length; i++){
           const currentRow = rows[i]
-          if (currentRow[0] !== lastLabel){
+          if (currentRow[0] !== lastLabel){ // new icn
             lastLabel = currentRow[0];
             const dataGroup = {
               label: lastLabel,
               bars: []
             }
-            for (let k=1; k<headerRow.length; k++){
-              dataGroup.bars.push([]);
-            }
             data.push(dataGroup);
           }
           let currentDataGroup = data[data.length - 1]
-          for (let j=1; j<headerRow.length; j++){
-            const dataPoint = currentRow[j] ? currentRow[j] : 0;
-            currentDataGroup.bars[j-1].push(dataPoint);
-          }
+          currentDataGroup.bars.push(currentRow.slice(2, RATING_LEVELS+2))
         }
         console.log("Data", data);
         this.setState({
@@ -84,7 +83,7 @@ class App extends Component {
         </div>
         <div className="app--display-area">
           {
-            this.state.data.map((d, i) => <BarGroup bars={d.bars} options={this.state.options} key={i}/>)
+            this.state.data.map((d, i) => <BarGroup bars={d.bars} label={d.label} options={this.state.options} key={i}/>)
           }
         </div>
       </div>
