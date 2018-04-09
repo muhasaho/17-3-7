@@ -13,6 +13,7 @@ class App extends Component {
       monochrome: false,
       sort: true,
       barWidth: 50,
+      showLabel: true,
     },
     data: [
       {
@@ -48,7 +49,7 @@ class App extends Component {
       complete: (results) => {
         const data = [];
         const rows = results.data;
-        const headerRow = rows[0]
+        //const headerRow = rows[0]
         let lastLabel = undefined;
         for (let i=1; i<rows.length; i++){
           const currentRow = rows[i]
@@ -80,7 +81,7 @@ class App extends Component {
         </div>
         <div className="app--display-area">
           {
-            this.state.data.map((d, i) => <BarGroup bars={d.bars} options={this.state.options} key={i}/>)
+            this.state.data.map((d, i) => <BarGroup bars={d.bars} label={d.label} options={this.state.options} key={i}/>)
           }
         </div>
       </div>
