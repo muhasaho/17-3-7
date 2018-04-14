@@ -5,6 +5,15 @@ import InputCheckbox from '../input-checkbox'
 import InputText from '../input-text'
 import InputFile from '../input-file/index'
 
+/**
+ * The options bar.
+ *
+ * @param {*} options - The app options.
+ * @param {function} onOptionChange - Called with (optionName, value) when a option is changed.
+ * @param {function} onFileChange - Called with file when a new file is uploaded.
+ * @returns {XML}
+ * @constructor
+ */
 const Options = ({options, onOptionChange, onFileChange}) => {
   return (
     <div className="options--container">

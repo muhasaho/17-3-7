@@ -7,7 +7,11 @@ import ColorLegend from '../color-legend'
 
 const RATING_LEVELS = 5
 
+/**
+ * This is the entry point component. It also keeps the state of the application.
+ */
 class App extends Component {
+  // setup initial state
   state = {
     options: {
       monochrome: false,
@@ -32,6 +36,13 @@ class App extends Component {
     ]
   }
 
+  /**
+   * Called to set an option
+   *
+   * @param key - The option key.
+   * @param value - The option value.
+   * @private
+   */
   _onOptionChange = (key, value) => {
     this.setState({
       ...this.state,
@@ -42,6 +53,12 @@ class App extends Component {
     })
   }
 
+  /**
+   * Called when a new file is uploaded.
+   *
+   * @param file - The file pointer.
+   * @private
+   */
   _onFileChange = (file) => {
     console.log("File: ", file)
     document.title = file.name;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 /**
  * A file input.
- * @param {function} onChange - called with a file when the user selects a file
+ * @param {function} onChange - Called with a file when the user selects a file.
  * @returns {XML}
  * @constructor
  */
