@@ -6,7 +6,7 @@ import {monochromeBlue, greenYellowRed} from '../bar/index'
 /**
  * Displays the color legend
  *
- * @param {boolean} monochrome - If `true` the monochrome color scheme is displayed, otherwise the GYB color scheme is displayed.
+ * @param {boolean} monochrome - If `true` the monochrome color scheme is displayed, otherwise the rainbow color scheme is displayed.
  * @constructor
  */
 const ColorLegend = ({monochrome}) => monochrome ? renderColors(monochromeBlue) : renderColors(greenYellowRed);

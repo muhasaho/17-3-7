@@ -4,6 +4,15 @@ import Bar from '../bar'
 import Ticks from '../ticks'
 import PropTypes from 'prop-types'
 
+/**
+ * Renders a group of bars (aka stamp).
+ *
+ * @param options - The app options.
+ * @param label - The label for the group.
+ * @param bars - An array of arrays. Each sub array has 5 values representing the counts for each rating from 1 to 5.
+ * @returns {XML}
+ * @constructor
+ */
 const BarGroup = ({options, label, bars}) => {
   const tickCount = bars[0].reduce((t,v) => t+v, 0);
   return (
