@@ -41,3 +41,4 @@ BarGroup.propTypes = {
 }
 
 export default BarGroup;
+

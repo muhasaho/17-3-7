@@ -25,3 +25,4 @@ InputText.propTypes = {
 }
 
 export default InputText;
+

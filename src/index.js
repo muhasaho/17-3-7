@@ -9,7 +9,6 @@ import * as strings from './strings'
 import 'normalize.css'
 import './index.css';
 import App from './components/app';
-import registerServiceWorker from './registerServiceWorker';
 
 // setup internationalization
 addLocaleData([...en, ...es])
@@ -23,4 +22,4 @@ ReactDOM.render(
       <App />
     </IntlProvider>
   </ReduxProvider>, document.getElementById('root'));
-registerServiceWorker();
+

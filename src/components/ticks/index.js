@@ -21,3 +21,4 @@ Ticks.propTypes = {
 };
 
 export default Ticks;
+
