@@ -95,12 +95,15 @@ class App extends Component {
     return (
       <div className="app--container">
         <div className="app--options-area">
-          <Options options={this.state.options} onOptionChange={this._onOptionChange} onFileChange={this._onFileChange}/>
+          <Options options={this.state.options}
+                   onOptionChange={this._onOptionChange}
+                   onFileChange={this._onFileChange}/>
           <ColorLegend monochrome={this.state.options.monochrome}/>
         </div>
         <div className="app--display-area">
           {
-            this.state.data.map((d, i) => <BarGroup bars={d.bars} label={d.label} options={this.state.options} key={i}/>)
+            this.state.data.map((d, i) => <BarGroup bars={d.bars}
+                                                    label={d.label} options={this.state.options} key={i}/>)
           }
         </div>
       </div>
